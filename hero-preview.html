@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Preview 50/50 hero</title>
+    <style>
+        /*****************************************************
+            fonts we need
+        *****************************************************/
+        @font-face {
+            font-family: OpenSansSemiBold;
+            font-weight: 400;
+            font-style: normal;
+            src: url(https://webcdn2.cox.com/ui/presentation/tsw/css/fonts/OpenSans-Semibold-webfont.eot);
+            src: url(https://webcdn2.cox.com/ui/presentation/tsw/css/fonts/OpenSans-Semibold-webfont.eot?#iefix) format("embedded-opentype"), url(https://webcdn2.cox.com/ui/presentation/tsw/css/fonts/OpenSans-Semibold-webfont.woff) format("woff"), url(https://webcdn2.cox.com/ui/presentation/tsw/css/fonts/OpenSans-Semibold-webfont.ttf) format("truetype"), url(https://webcdn2.cox.com/ui/presentation/tsw/css/fonts/OpenSans-Semibold-webfont.svg#open_sanssemibold) format("svg")
+        }
+
+        @font-face {
+            font-family: GothamRounded;
+            src: url(https://webcdn2.cox.com/ui/aem/tsw/css/fonts/gothamrnd-book.eot);
+            src: url(https://webcdn2.cox.com/ui/aem/tsw/css/fonts/gothamrnd-book.eot) format("embedded-opentype"), url(https://webcdn2.cox.com/ui/aem/tsw/css/fonts/gothamrnd-book.woff) format("woff"), url(https://webcdn2.cox.com/ui/aem/tsw/css/fonts/gothamrnd-book.ttf) format("truetype"), url(https://webcdn2.cox.com/ui/aem/tsw/css/fonts/gothamrnd-book.svg#GothamRoundedBook) format("svg")
+        }
+
+        @font-face {
+            font-style: normal;
+            font-family: OpenSans;
+            src: url(https://webcdn2.cox.com/ui/presentation/tsw/css/fonts/OpenSans-Regular-webfont.eot);
+            src: url(https://webcdn2.cox.com/ui/presentation/tsw/css/fonts/OpenSans-Regular-webfont.eot?#iefix) format("embedded-opentype"), url(https://webcdn2.cox.com/ui/presentation/tsw/css/fonts/OpenSans-Regular-webfont.woff) format("woff"), url(https://webcdn2.cox.com/ui/presentation/tsw/css/fonts/OpenSans-Regular-webfont.ttf) format("truetype"), url(https://webcdn2.cox.com/ui/presentation/tsw/css/fonts/OpenSans-Regular-webfont.svg#open_sansregular) format("svg")
+        }
+
+        @font-face {
+            font-family: OpenSans;
+            font-weight: 700;
+            font-style: normal;
+            src: url(https://webcdn2.cox.com/ui/presentation/tsw/css/fonts/OpenSans-Bold-webfont.eot);
+            src: url(https://webcdn2.cox.com/ui/presentation/tsw/css/fonts/OpenSans-Bold-webfont.eot?#iefix) format("embedded-opentype"), url(https://webcdn2.cox.com/ui/presentation/tsw/css/fonts/OpenSans-Bold-webfont.woff) format("woff"), url(https://webcdn2.cox.com/ui/presentation/tsw/css/fonts/OpenSans-Bold-webfont.ttf) format("truetype"), url(https://webcdn2.cox.com/ui/presentation/tsw/css/fonts/OpenSans-Bold-webfont.svg#open_sansbold) format("svg")
+        }
+
+
+        /*****************************************************
+            styles we need
+        *****************************************************/
+
+        body {
+            margin: 0;
+            font-family: OpenSans;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+        }
+
+        .bg-frame {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 1600px;
+            background-color: #F2F6F7;
+            min-height: 370px;
+        }
+
+        .hbox {
+            display: flex;
+            min-height: 350px;
+            background-color: #ffffff;
+            margin: 10px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .hbox > div {
+            width: 100%;
+        }
+
+        .bg-holder {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .instructions {
+            padding: 25px;
+            max-width: 1550px;
+            margin: 0 auto;
+        }
+
+        .header-column {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 800px;
+        }
+
+        .headers {
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .headers > div {
+            max-width: 420px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            font-size: 18px;
+            line-height: normal;
+            font-family: OpenSansSemiBold;
+            margin-bottom: 15px;
+        }
+
+        .blue {
+            font-family: GothamRounded;
+            font-size: 50px;
+            line-height: 56px;
+            color: #009ae0;
+            margin-bottom: 15px;
+        }
+
+        .small {
+            font-family: OpenSans;
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 15px;
+
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .eyebrow {
+                font-size: 12px;
+            }
+
+            .blue {
+                line-height: normal;
+                font-size: 25px;
+            }
+
+            .small {
+            }
+        }
+
+        @media (max-width: 620px) {
+            .hbox {
+                flex-wrap: wrap;
+            }
+
+            .header-column {
+
+            }
+
+            .bg-holder {
+                min-height: 140px !important;
+            }
+        }
+    </style>
+    <script>
+        var _checked = true;
+        var _f;
+
+        function toggleCheckbox() {
+            _checked = !_checked;
+            document.querySelector('.small').style.display = (_checked) ? '' : 'none';
+        }
+
+
+        function updateImg(evt) {
+            _f = evt.dataTransfer.files[0];
+            evt.preventDefault();
+
+            var reader = new FileReader();
+
+            reader.onloadend = function (img) {
+                document.querySelector('.bg-holder').style.backgroundImage = "url('" + reader.result + "')";
+            };
+
+            reader.readAsDataURL(_f);
+        }
+
+        function noDefault(e) {
+            e.preventDefault();
+        }
+
+
+    </script>
+</head>
+<body id="drop_zone" ondrop="updateImg(event)" ondragover="noDefault(event)">
+<div class="content">
+    <div class="bg-frame">
+        <div class="hbox">
+            <div class="bg-holder"></div>
+            <div class="header-column">
+                <div class="headers">
+                    <div class="eyebrow" contenteditable="true">Cox television starter</div>
+                    <div class="blue" contenteditable="true">Get what you need</div>
+                    <div class="small" contenteditable="true">Just want the essential channels and features? With TV
+                        Starter, that’s exactly what you get.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="instructions">
+    <b>Instructions:</b><br>
+    <ul>
+        <li>Either replace the <b>bg.jpg</b> within this directory or drag &amp; drop a file on the current background
+            image
+        </li>
+        <li>Click on the headers to edit the text (you can also change the text in the HTML file itself)</li>
+        <li>Include sub-headline <input type="checkbox" checked onclick="toggleCheckbox()"></li>
+        <li>Resize the window or use the mobile simulator mode to preview the behavior</li>
+
+    </ul>
+</div>
+<script>
+    document.querySelector('.bg-holder').style.backgroundImage = "url('bg.jpg')";
+
+</script>
+</body>
+</html>
